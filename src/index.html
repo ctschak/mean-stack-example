@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="mainApp" id="ng-app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MEAN Stack Example</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/demo.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="#/home">MEAN Stack Example</a>
+          </div>
+          <!-- /.navbar-header -->
+
+          <ul class="nav navbar-nav pull-right"  ng-controller="navCtrl">
+             <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+             <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
+             <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+             <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
+           </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+          <!-- AnuglarJS Views will be injected in the main-container -->
+          <div ui-view> </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- AngularJs Scripts -->
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="vendor/angular-sanitize/angular-sanitize.js"></script>
+    <script src="vendor/angular-resource/angular-resource.js"></script>
+
+    <!-- Application scripts -->
+    <script src="app/app.js"></script>
+    <script src="app/service/auth.js"></script>
+    <script src="app/service/posts.js"></script>
+    <script src="app/home/homeCtrl.js"></script>
+    <script src="app/posts/postCtrl.js"></script>
+    <script src="app/login/AuthCtrl.js"></script>
+    <script src="app/login/navCtrl.js"></script>
+
+
+
+
+
+</body>
+
+</html>

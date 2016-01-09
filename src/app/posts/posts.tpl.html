@@ -1,0 +1,46 @@
+<div class="container post-container">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+              <a ng-show="post.link" href="{{post.link}}">
+                  {{post.title}}
+              </a>
+              <span ng-hide="post.link">
+                  {{post.title}}
+              </span>
+            </h1>
+            <div class="row">
+                <div class="col-lg-9 col-lg-offset-1" >
+
+                  <div ng-repeat="comment in post.comments | orderBy: '-upvotes'">
+                    <span ng-click="incrementVotes(comment)" class="fa fa-thumbs-o-up"></span>&nbsp;
+                      {{comment.upvotes}} - by {{comment.author}}
+                    <span class="comment-txt">
+                        {{comment.body}}
+                    </span>
+
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+              <h1 class="page-header">
+                  Add a new comment
+              </h1>
+              <div ng-hide="isLoggedIn()">
+                <h3>You need to <a href="/#/login">Log In</a> or <a href="/#/register">Register</a> before you can comment.</h3>
+              </div>
+              <form ng-submit="addComment()" ng-show="isLoggedIn()">
+                <div class="form-group">
+                    <input type="text" class="form-control form-text-box" placeholder="Enter your comment" ng-model="body"></input>
+                </div>
+
+                <button class="btn btn-primary btn-lg post-btn" type="submit">Comment</button>
+              </form>
+
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+     </div>
+</div>
