@@ -119,7 +119,7 @@ router.post('/login', function(req, res, next){
 
   passport.authenticate('local', function(err, user, info){
     if(err){ return next(err); }
-    console.log("Inside index.js login -- "+ JSON.stringify(user));
+      console.log("Inside index.js login -- "+ JSON.stringify(user));
     if(user){
       return res.json({token: user.generateJWT()});
     } else {

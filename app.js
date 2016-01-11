@@ -7,8 +7,11 @@ var bodyParser = require('body-parser');
 //MongoDB
 var mongoose = require('mongoose');
 var passport = require('passport');
-//Connect to MongoDB
+//Connect to MongoDB local
 mongoose.connect('mongodb://localhost/news');
+//var db = Mongoose.createConnection('mongodb://USER:PASSWORD@localhost/DATABASE');
+//Connect to MongoDB Amazon web service
+//mongoose.connect('mongodb://root:5ONhmK3f1pVK@/opt/bitnami/mongodb/tmp/mongodb-27017.sock/admin');
 require('./model/Post');
 require('./model/Comment');
 require('./model/User');
