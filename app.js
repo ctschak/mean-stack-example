@@ -13,7 +13,9 @@ var passport = require('passport');
 //Connect to MongoDB Amazon web service
 //mongoose.connect('mongodb://root:5ONhmK3f1pVK@/opt/bitnami/mongodb/tmp/mongodb-27017.sock/admin');
 //Connect to MongoDB Heroku
-mongoose.connect('mongodb://root:andromeda@ds029117.mongolab.com:29117/heroku_lq232rp3');
+//mongoose.connect('mongodb://root:andromeda@ds029117.mongolab.com:29117/heroku_lq232rp3');
+//Connect to openshift Heroku
+mongoose.connect('mongodb://admin:2aLbGjebuJ7Xr@ds029117.mongolab.com:29117/meanstack');
 require('./model/Post');
 require('./model/Comment');
 require('./model/User');
