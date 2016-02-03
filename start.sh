@@ -1,1 +1,1 @@
-forever start ./bin/www
+sudo forever start ./bin/www
